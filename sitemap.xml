@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://olglory.com/</loc></url>
-  <url><loc>https://olglory.com/citrus</loc></url>
-  <url><loc>https://olglory.com/citrus-zero</loc></url>
-  <url><loc>https://olglory.com/mixed-berry</loc></url>
-  <url><loc>https://olglory.com/our-story</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://olglory.com/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <image:image><image:loc>https://olglory.com/assets/img/ol-glory-citrus-energy-drink-fireworks.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://olglory.com/citrus</loc>
+    <lastmod>2026-11-18</lastmod>
+    <image:image><image:loc>https://olglory.com/assets/img/ol-glory-citrus-energy-drink.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://olglory.com/citrus-zero</loc>
+    <lastmod>2026-11-18</lastmod>
+    <image:image><image:loc>https://olglory.com/assets/img/ol-glory-citrus-zero-sugar-free-energy-drink.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://olglory.com/mixed-berry</loc>
+    <lastmod>2026-11-18</lastmod>
+    <image:image><image:loc>https://olglory.com/assets/img/ol-glory-mixed-berry-energy-drink.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://olglory.com/our-story</loc>
+    <lastmod>2026-11-18</lastmod>
+    <image:image><image:loc>https://olglory.com/assets/img/don-sessions-ol-glory-founder.jpg</image:loc></image:image>
+  </url>
 </urlset>
