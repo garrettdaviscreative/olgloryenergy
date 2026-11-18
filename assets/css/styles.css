@@ -3,16 +3,6 @@
    Colors, fonts and spacing live in :root. Change them there.
    ========================================================================== */
 
-/* Self-hosted fonts (SIL Open Font License). Faster than loading from Google. */
-@font-face { font-family: 'Big Shoulders Display'; font-style: normal; font-weight: 800; font-display: swap; src: url('../fonts/big-shoulders-display-latin-800-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Big Shoulders Display'; font-style: normal; font-weight: 900; font-display: swap; src: url('../fonts/big-shoulders-display-latin-900-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/barlow-latin-400-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 500; font-display: swap; src: url('../fonts/barlow-latin-500-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/barlow-latin-600-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Barlow'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/barlow-latin-700-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/barlow-condensed-latin-600-normal.woff2') format('woff2'); }
-@font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/barlow-condensed-latin-700-normal.woff2') format('woff2'); }
-
 :root {
   --navy: #0B1B3F;
   --blue: #1A47C8;
@@ -356,7 +346,7 @@ figcaption { margin-top: 14px; font-size: 16px; color: var(--ink-soft); }
   border: 6px solid var(--red); color: var(--red); padding: 22px 30px; transform: rotate(-8deg);
 }
 .stamp strong { font-family: var(--font-display); font-weight: 900; font-size: 84px; line-height: .9; text-transform: uppercase; }
-.stamp span { font-size: 19px; letter-spacing: .08em; } /* 19px+ bold keeps red-on-navy readable */
+.stamp span { font-size: 18px; letter-spacing: .2em; }
 .stamp-wrap { display: flex; justify-content: center; flex: 0 1 380px !important; }
 .memorial { border-top: 6px solid var(--red); border-bottom: 6px solid var(--red); text-align: center; }
 .memorial .container { max-width: 900px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
@@ -368,21 +358,6 @@ figcaption { margin-top: 14px; font-size: 16px; color: var(--ink-soft); }
   .stamp-wrap { flex: 1 1 100% !important; }
   .stamp { padding: 16px 20px; transform: rotate(-5deg); }
   .stamp strong { font-size: 56px; }
-  .stamp span { font-size: 19px; letter-spacing: .04em; }
+  .stamp span { font-size: 13px; letter-spacing: .14em; }
 }
 main { overflow-x: clip; }
-
-/* ---------- FAQ ---------- */
-.faq { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 0 56px; align-items: start; margin-top: 40px; }
-.faq details { border-top: 2px solid var(--line); padding: 20px 0; }
-.faq summary {
-  cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 16px;
-  font-family: var(--font-display); font-weight: 800; font-size: 26px; line-height: 1.1; text-transform: uppercase;
-}
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: '+'; color: var(--red); font-size: 30px; line-height: 1; }
-.faq details[open] summary::after { content: '–'; }
-.faq p { margin: 12px 0 0; color: var(--mist); }
-.faq a { color: var(--gold); }
-.perfect-for { margin: 0; font-size: 17px; color: var(--ink-soft); }
-.perfect-for strong { color: var(--navy); }
