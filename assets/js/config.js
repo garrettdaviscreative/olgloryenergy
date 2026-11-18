@@ -4,15 +4,6 @@
    ========================================================================== */
 window.OG_CONFIG = {
 
-  // Online checkout links, one per flavor.
-  // Easiest option: create a Stripe Payment Link for each product
-  // (dashboard.stripe.com → Payment Links) and paste the URL here.
-  // Empty = the button shows "Online ordering coming soon".
-  buyLinks: {
-    "citrus": "",
-    "citrus-zero": "",
-    "mixed-berry": ""
-  },
 
   // Email signup. Paste a form endpoint from Formspree, Mailchimp,
   // Klaviyo or similar. Empty = the form shows a "coming soon" note

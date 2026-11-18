@@ -1,4 +1,4 @@
-/* Ol' Glory site behavior: mobile menu, buy buttons, signup form, social links. */
+/* Ol' Glory site behavior: mobile menu, signup form, social links. */
 (function () {
   var cfg = window.OG_CONFIG || {};
 
@@ -13,18 +13,6 @@
     });
   }
 
-  // Buy buttons: <a data-buy="citrus">
-  document.querySelectorAll('[data-buy]').forEach(function (btn) {
-    var link = (cfg.buyLinks || {})[btn.getAttribute('data-buy')];
-    if (link) {
-      btn.href = link;
-      btn.removeAttribute('aria-disabled');
-    } else {
-      btn.textContent = 'Online ordering coming soon';
-      btn.setAttribute('aria-disabled', 'true');
-      btn.removeAttribute('href');
-    }
-  });
 
   // Social links: <a data-social="instagram">. Hidden when empty.
   document.querySelectorAll('[data-social]').forEach(function (a) {
