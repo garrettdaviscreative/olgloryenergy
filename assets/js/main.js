@@ -73,6 +73,72 @@
     });
   });
 
+  // ===== Scroll animations: reveals, count-up stats, stamp slams =====
+  // Only touches things below the fold at load, so nothing flashes or hides
+  // if the script fails. Skipped entirely for "reduce motion" users.
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var vh = window.innerHeight;
+    var below = function (el) { return el.getBoundingClientRect().top > vh * 0.92; };
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        var el = e.target;
+        if (el.classList.contains('og-reveal')) {
+          el.classList.add('is-in');
+          // Hand control back to the element's own hover transitions once revealed
+          setTimeout(function () { el.classList.remove('og-reveal', 'is-in'); el.style.transitionDelay = ''; }, 1400);
+        }
+        if (el.hasAttribute('data-count')) countUp(el);
+        if (el.classList.contains('og-stamp-pre')) el.classList.add('og-stamp-in');
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+    // 1. Fade/slide reveals, staggered within each group
+    var sel = '.section-head, .flavor-card, .stats, .split > :not(.stamp-wrap), .cta-card, .og-faq-head, .og-faq-item, ' +
+              '.product-media, .product-info, .nutrition-wrap > *, .xsell a, .memorial .container > *, .closing .container > *, ' +
+              '.section > .container > h2.display';
+    var seen = [];
+    document.querySelectorAll(sel).forEach(function (el) {
+      if (seen.indexOf(el) > -1 || !below(el)) return;
+      seen.push(el);
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.matches(sel); });
+      var i = sibs.indexOf(el);
+      el.style.transitionDelay = Math.min(i, 4) * 90 + 'ms';
+      el.classList.add('og-reveal');
+      io.observe(el);
+    });
+
+    // 2. Count-up stats (153mg, 0g, 42, 16oz)
+    function countUp(el) {
+      var node = el.firstChild, end = parseFloat(el.getAttribute('data-count')), t0 = null, dur = 1400;
+      function step(t) {
+        if (!t0) t0 = t;
+        var p = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+        node.nodeValue = Math.round(end * eased);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    document.querySelectorAll('.stat-value').forEach(function (el) {
+      var node = el.firstChild;
+      if (!node || node.nodeType !== 3 || !/^\s*\d+\s*$/.test(node.nodeValue) || !below(el)) return;
+      el.setAttribute('data-count', node.nodeValue.trim());
+      node.nodeValue = '0';
+      io.observe(el);
+    });
+
+    // 3. "Approved" stamp slams down when it scrolls into view
+    document.querySelectorAll('.stamp-wrap').forEach(function (el) {
+      if (!below(el)) return;
+      el.classList.add('og-stamp-pre');
+      io.observe(el);
+    });
+  })();
+
   // Footer year
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
