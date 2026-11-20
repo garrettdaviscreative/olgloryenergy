@@ -421,7 +421,7 @@ main { overflow-x: clip; }
 /* ===== END FAQ SECTION ===== */
 
 /* ===== Spotted in the wild: cooler photo ===== */
-.cta-grid { align-items: start; }
-.find-photo { display: block; margin-top: 8px; }
+.find-photo { display: block; margin-top: auto; padding-top: 8px; } /* pins photos to the card bottom so both cards line up */
 .find-photo img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border: 2px solid var(--line); }
+.cta-gold .find-photo img { border-color: var(--navy); }
 /* ===== END cooler photo ===== */
