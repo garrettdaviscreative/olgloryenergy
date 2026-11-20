@@ -250,7 +250,7 @@ a:hover { color: var(--gold); }
 .warning .fine { margin: 0; font-size: 14px; color: var(--ink-soft); }
 
 /* ---------- Find us + signup ---------- */
-.cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+.cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px; }
 .cta-card { padding: 40px; display: flex; flex-direction: column; gap: 18px; }
 .cta-card p { margin: 0; }
 .cta-outline { border: 2px solid var(--line); }
@@ -258,7 +258,7 @@ a:hover { color: var(--gold); }
 .cta-gold { background: var(--gold); color: var(--navy); }
 .form-row { display: flex; flex-wrap: wrap; gap: 12px; }
 .form-row input {
-  flex: 1 1 200px; min-height: 56px; padding: 0 16px; border: 2px solid var(--navy);
+  flex: 1 1 200px; min-width: 0; min-height: 56px; padding: 0 16px; border: 2px solid var(--navy);
   background: var(--white); color: var(--navy); font: inherit; border-radius: 0;
 }
 .form-note { font-size: 15px; min-height: 1.5em; margin: 0; }
