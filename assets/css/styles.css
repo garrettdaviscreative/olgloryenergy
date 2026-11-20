@@ -361,3 +361,61 @@ figcaption { margin-top: 14px; font-size: 16px; color: var(--ink-soft); }
   .stamp span { font-size: 13px; letter-spacing: .14em; }
 }
 main { overflow-x: clip; }
+
+/* ===== FAQ SECTION: tiny-can bullets ===== */
+.og-faq { padding: 96px 0; border-top: 2px solid var(--line); }
+.og-faq-head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
+.og-can-word { color: #6E9BFF; } /* light "Can Blue" so "Can" pops against "swers" */
+.og-faq-list {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+  gap: 0 56px; align-items: start;
+}
+.og-faq-item { border-top: 2px solid var(--line); }
+.og-faq-item summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; gap: 16px; padding: 18px 0;
+  font-family: var(--font-display); font-weight: 800; font-size: 25px; line-height: 1.1; text-transform: uppercase;
+}
+.og-faq-item summary::-webkit-details-marker { display: none; }
+.og-faq-item summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+.og-faq-q { flex-grow: 1; }
+.og-faq-item summary::after { content: '+'; color: var(--red); font-size: 30px; line-height: 1; flex-shrink: 0; }
+.og-faq-item[open] summary::after { content: '–'; }
+.og-faq-item summary:hover .og-faq-q { color: var(--gold); }
+
+/* The tiny can bullet */
+.og-mini-can {
+  --can: #1A47C8; --band: #C9CDD3; --stripe: #D7262E;
+  position: relative; flex-shrink: 0; width: 16px; height: 28px; margin-top: 4px;
+  border-radius: 4px 4px 3px 3px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.28) 0%, rgba(255,255,255,.35) 30%, rgba(0,0,0,0) 55%, rgba(0,0,0,.3) 100%),
+    linear-gradient(180deg, var(--band) 0 6px, var(--can) 6px);
+  transition: transform .25s ease;
+}
+.og-mini-can::before { /* lid */
+  content: ''; position: absolute; left: 1px; right: 1px; top: -3px; height: 5px; border-radius: 50%;
+  background: #E4E7EC;
+}
+.og-mini-can::after { /* the three Ol' Glory stripes */
+  content: ''; position: absolute; left: 4px; right: 3px; top: 11px; height: 8px;
+  background: repeating-linear-gradient(180deg, var(--stripe) 0 2px, transparent 2px 3px);
+}
+.og-mini-can--zero  { --can: #C9CDD3; --band: #1A47C8; }
+.og-mini-can--berry { --can: #A3123A; --stripe: #FFFFFF; }
+.og-faq-item[open] .og-mini-can { transform: rotate(-20deg); } /* cracked open */
+
+/* The answer */
+.og-faq-a {
+  margin: 0; padding: 0 0 22px 32px; color: var(--mist);
+  font-family: var(--font-label); font-weight: 600; font-size: 20px; line-height: 1.4;
+}
+.og-faq-a a { color: var(--gold); }
+
+@media (prefers-reduced-motion: reduce) { .og-mini-can { transition: none; } }
+@media (max-width: 640px) {
+  .og-faq { padding: 56px 0; }
+  .og-faq-head { margin-bottom: 28px; }
+  .og-faq-item summary { font-size: 21px; gap: 14px; }
+  .og-faq-a { font-size: 18px; padding-left: 30px; }
+}
+/* ===== END FAQ SECTION ===== */
