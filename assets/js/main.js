@@ -98,7 +98,7 @@
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
 
     // 1. Fade/slide reveals, staggered within each group
-    var sel = '.section-head, .flavor-card, .stats, .split > :not(.stamp-wrap), .cta-card, .og-faq-head, .og-faq-item, ' +
+    var sel = '.section-head, .news-card, .flavor-card, .stats, .split > :not(.stamp-wrap), .cta-card, .og-faq-head, .og-faq-item, ' +
               '.product-media, .product-info, .nutrition-wrap > *, .xsell a, .memorial .container > *, .closing .container > *, ' +
               '.section > .container > h2.display';
     var seen = [];
