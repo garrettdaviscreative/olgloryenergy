@@ -514,3 +514,22 @@ main { overflow-x: clip; }
   background-blend-mode: overlay, normal, normal, normal;
 }
 /* ===== END hero background ===== */
+
+/* ===== Sitewide: subtle "Electric Plaster" on every plain navy section (preview) =====
+   Same soft texture as the hero; glow centered; fades to navy at top/bottom so stacked
+   sections blend with no seams. Bone, red, news and hero sections keep their own backgrounds. */
+main > .section:not(.section-bone):not(.section-red):not(.news-hero),
+.og-faq {
+  background-color: #0b1b3f;
+  background-image: url("/assets/img/tex-plaster-soft.jpg"),
+    linear-gradient(180deg, #0b1b3f 0, rgba(11,27,63,0) 90px, rgba(11,27,63,0) calc(100% - 90px), #0b1b3f 100%),
+    radial-gradient(ellipse 120% 100% at 50% 50%, transparent 40%, rgba(5,12,32,.7) 100%),
+    radial-gradient(ellipse 900px 560px at 50% 50%, #1844b0 0%, #10286b 65%, #0b1b3f 100%);
+  background-size: 640px 640px, 100% 100%, 100% 100%, 100% 100%;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-blend-mode: overlay, normal, normal, normal;
+}
+.section .text-red, .og-faq .text-red, .og-faq .og-can-word {
+  text-shadow: 0 3px 0 #0b1b3f, 0 0 24px rgba(3,10,35,.7); /* keeps red and light-blue words readable on the textured blue */
+}
+/* ===== END sitewide background ===== */
