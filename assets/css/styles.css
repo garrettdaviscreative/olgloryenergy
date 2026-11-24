@@ -485,15 +485,17 @@ main { overflow-x: clip; }
   .post-foot .btn { width: 100%; }
   .news-card-title { font-size: 30px; }
 }
-/* News pages: subtle Americana texture (faint stars + stripes + glow) behind the text */
-.news-hero, .post {
-  background-color: var(--navy);
-  background-image:
-    radial-gradient(ellipse 70% 55% at 100% 0%, rgba(215,38,46,.16), transparent 70%),
-    radial-gradient(ellipse 60% 50% at 0% 0%, rgba(26,71,200,.22), transparent 70%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cpath fill='%23ffffff' fill-opacity='.045' d='M18 9l2.1 6.5H27l-5.5 4 2.1 6.5L18 22l-5.6 4 2.1-6.5-5.5-4h6.9zM54 45l2.1 6.5H63l-5.5 4 2.1 6.5L54 58l-5.6 4 2.1-6.5-5.5-4h6.9z'/%3E%3C/svg%3E"),
-    repeating-linear-gradient(-45deg, rgba(255,255,255,.018) 0 14px, transparent 14px 28px);
-  background-repeat: no-repeat, no-repeat, repeat, repeat;
-}
+/* News pages: "Electric Plaster" — blue glow, worn dark edges, mottled plaster texture (tex-plaster.jpg, overlay blend).
+   Darkens below ~620px so body text stays readable. Option E, chosen by Garrett Nov 24 2026. */
+.news-hero, .post {background-color:#0f379e;
+  background-image:url("/assets/img/tex-plaster.jpg"),
+    radial-gradient(ellipse 115% 95% at 50% 35%, transparent 38%, rgba(2,8,30,.9) 100%),
+    linear-gradient(180deg, transparent 0, transparent 620px, rgba(6,16,52,.6) 1150px),
+    radial-gradient(ellipse 900px 520px at 50% 260px, #2468e8 0%, #0f379e 70%, transparent 100%),
+    linear-gradient(180deg, #0f379e, #0f379e);
+  background-size: 640px 640px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-blend-mode: overlay, normal, normal, normal, normal;}
+.news-hero .text-red {color:#ff3b44;text-shadow:0 3px 0 #0b1b3f,0 0 28px rgba(3,10,35,.75)} /* red on bright blue needs a navy edge to read */
 .post-body, .post-head .container, .post-figure, .post-foot { position: relative; }
 /* ===== END News ===== */
