@@ -499,3 +499,18 @@ main { overflow-x: clip; }
 .news-hero .text-red {color:#ff3b44;text-shadow:0 3px 0 #0b1b3f,0 0 28px rgba(3,10,35,.75)} /* red on bright blue needs a navy edge to read */
 .post-body, .post-head .container, .post-figure, .post-foot { position: relative; }
 /* ===== END News ===== */
+
+/* ===== Homepage hero: subtle "Electric Plaster" (Option 1, chosen Nov 24 2026) =====
+   Softer copy of the News texture (tex-plaster-soft.jpg) + dim glow behind the can photo.
+   Fades to navy at top and bottom so it blends into the header and ticker. */
+.hero {
+  background-color: #0b1b3f;
+  background-image: url("/assets/img/tex-plaster-soft.jpg"),
+    linear-gradient(180deg, #0b1b3f 0, rgba(11,27,63,0) 90px, rgba(11,27,63,0) calc(100% - 90px), #0b1b3f 100%),
+    radial-gradient(ellipse 120% 100% at 60% 45%, transparent 40%, rgba(5,12,32,.7) 100%),
+    radial-gradient(ellipse 760px 520px at 72% 50%, #1d55cf 0%, #122e78 65%, #0b1b3f 100%);
+  background-size: 640px 640px, 100% 100%, 100% 100%, 100% 100%;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-blend-mode: overlay, normal, normal, normal;
+}
+/* ===== END hero background ===== */
