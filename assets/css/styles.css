@@ -532,4 +532,6 @@ main > .section:not(.section-bone):not(.section-red):not(.news-hero),
 .section .text-red, .og-faq .text-red, .og-faq .og-can-word {
   text-shadow: 0 3px 0 #0b1b3f, 0 0 24px rgba(3,10,35,.7); /* keeps red and light-blue words readable on the textured blue */
 }
+/* "Spotted in the wild" card: solid navy panel so the texture doesn't show through (Garrett, Nov 24) */
+.cta-outline { background: #0b1b3f; }
 /* ===== END sitewide background ===== */
