@@ -488,14 +488,13 @@ main { overflow-x: clip; }
 /* News pages: "Electric Plaster" — blue glow, worn dark edges, mottled plaster texture (tex-plaster.jpg, overlay blend).
    Darkens below ~620px so body text stays readable. Option E, chosen by Garrett Nov 24 2026. */
 .news-hero, .post {background-color:#0f379e;
-  background-image:url("/assets/img/tex-plaster.jpg"),
+  background-image:url("/assets/img/tex-plaster-a.webp"),
     radial-gradient(ellipse 115% 95% at 50% 35%, transparent 38%, rgba(2,8,30,.9) 100%),
     linear-gradient(180deg, transparent 0, transparent 620px, rgba(6,16,52,.6) 1150px),
     radial-gradient(ellipse 900px 520px at 50% 260px, #2468e8 0%, #0f379e 70%, transparent 100%),
     linear-gradient(180deg, #0f379e, #0f379e);
   background-size: 640px 640px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
-  background-blend-mode: overlay, normal, normal, normal, normal;}
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;}
 .news-hero .text-red {color:#ff3b44;text-shadow:0 3px 0 #0b1b3f,0 0 28px rgba(3,10,35,.75)} /* red on bright blue needs a navy edge to read */
 .post-body, .post-head .container, .post-figure, .post-foot { position: relative; }
 /* ===== END News ===== */
@@ -505,13 +504,12 @@ main { overflow-x: clip; }
    Fades to navy at top and bottom so it blends into the header and ticker. */
 .hero {
   background-color: #0b1b3f;
-  background-image: url("/assets/img/tex-plaster-soft.jpg"),
+  background-image: url("/assets/img/tex-plaster-soft-a.webp"),
     linear-gradient(180deg, #0b1b3f 0, rgba(11,27,63,0) 90px, rgba(11,27,63,0) calc(100% - 90px), #0b1b3f 100%),
     radial-gradient(ellipse 120% 100% at 60% 45%, transparent 40%, rgba(5,12,32,.7) 100%),
     radial-gradient(ellipse 760px 520px at 72% 50%, #1d55cf 0%, #122e78 65%, #0b1b3f 100%);
   background-size: 640px 640px, 100% 100%, 100% 100%, 100% 100%;
   background-repeat: repeat, no-repeat, no-repeat, no-repeat;
-  background-blend-mode: overlay, normal, normal, normal;
 }
 /* ===== END hero background ===== */
 
@@ -521,13 +519,12 @@ main { overflow-x: clip; }
 main > .section:not(.section-bone):not(.section-red):not(.news-hero),
 .og-faq {
   background-color: #0b1b3f;
-  background-image: url("/assets/img/tex-plaster-soft.jpg"),
+  background-image: url("/assets/img/tex-plaster-soft-a.webp"),
     linear-gradient(180deg, #0b1b3f 0, rgba(11,27,63,0) 90px, rgba(11,27,63,0) calc(100% - 90px), #0b1b3f 100%),
     radial-gradient(ellipse 120% 100% at 50% 50%, transparent 40%, rgba(5,12,32,.7) 100%),
     radial-gradient(ellipse 900px 560px at 50% 50%, #1844b0 0%, #10286b 65%, #0b1b3f 100%);
   background-size: 640px 640px, 100% 100%, 100% 100%, 100% 100%;
   background-repeat: repeat, no-repeat, no-repeat, no-repeat;
-  background-blend-mode: overlay, normal, normal, normal;
 }
 .section .text-red, .og-faq .text-red, .og-faq .og-can-word {
   text-shadow: 0 3px 0 #0b1b3f, 0 0 24px rgba(3,10,35,.7); /* keeps red and light-blue words readable on the textured blue */
